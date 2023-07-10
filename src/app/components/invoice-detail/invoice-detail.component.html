@@ -1,0 +1,90 @@
+<div class="p-6">
+    <!-- Header Section -->
+    <div>
+        <div class="sm:flex">
+            <h1 class="text-3xl font-bold text-black">Invoice&nbsp;</h1>
+            <h1 class="text-3xl font-bold text-primary">#{{invoice_id}}</h1>
+        </div>
+        <h4 class="text-xl text-gray-light py-5">{{company_name}}</h4>
+        <hr class="border-b-1 border-gray-light-1 dark:bg-gray-700">
+    </div>
+
+    <!-- Bill Details Section  -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 py-5">
+        <div>
+            <div>
+                <div>Bill From:</div>
+                <div class="py-1 text-xl">{{from_owner}}</div>
+                <div class="text-gray-dark">{{from_address}}</div>
+            </div>
+            <div class="py-6">
+                <div>Issued On:</div>
+                <div class="py-1 text-xl">{{issued_date}}</div>
+            </div>
+        </div>
+        <div>
+            <div>
+                <div>Bill To:</div>
+                <div class="py-1 text-xl">{{to_owner}}</div>
+                <div class="text-gray-dark">{{to_address}}</div>
+            </div>
+            <div class="py-6">
+                <div>Due On:</div>
+                <div class="py-1 text-xl">{{due_date}}</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Table Section  -->
+    <div>
+        <div class="py-2">Invoice Detail</div>
+        <hr class="border-b-1 border-gray-light-1 dark:bg-gray-700">
+        <div class="flex flex-col">
+            <div class="overflow-x-auto">
+                <div class="inline-block min-w-full align-middle">
+                    <div class="overflow-hidden ">
+                        <table class="min-w-full divide-y divide-gray-light-1 table-fixed dark:divide-gray-700">
+                            <thead class="bg-gray-100 dark:bg-gray-700">
+                                <tr>
+                                    <th scope="col"
+                                        class="py-3 pr-6 text-base font-medium tracking-wider text-left text-gray-light uppercase dark:text-gray-400">
+                                        Description
+                                    </th>
+                                    <th scope="col"
+                                        class="py-3 px-6 text-base font-medium tracking-wider text-left text-gray-light uppercase dark:text-gray-400">
+                                        Price
+                                    </th>
+                                    <th scope="col"
+                                        class="py-3 px-6 text-base font-medium tracking-wider text-left text-gray-light uppercase dark:text-gray-400">
+                                        Qty
+                                    </th>
+                                    <th scope="col"
+                                        class="py-3 px-6 text-base font-medium tracking-wider text-left text-gray-light uppercase dark:text-gray-400">
+                                        Total Amount
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody class="bg-white divide-y divide-gray-200 dark:bg-gray-800 dark:divide-gray-700">
+                                <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+                                    <td
+                                        class="py-4 pr-6 text-base font-medium text-black whitespace-nowrap dark:text-white">
+                                        Apple Imac 27"</td>
+                                    <td
+                                        class="py-4 px-6 text-base font-medium text-black whitespace-nowrap dark:text-white">
+                                        Desktop PC</td>
+                                    <td
+                                        class="py-4 px-6 text-base font-medium text-black whitespace-nowrap dark:text-white">
+                                        $1999</td>
+                                    <td class="py-4 px-6 text-base font-medium text-black whitespace-nowrap">
+                                        <a href="#" class="text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
