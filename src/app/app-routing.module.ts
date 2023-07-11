@@ -5,8 +5,8 @@ import { CreateInvoiceComponent } from './components/create-invoice/create-invoi
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/home' },
-  { path: 'home', component: InvoiceDetailComponent },
-  { path: 'new', component: CreateInvoiceComponent },
+  { path: 'home', component: CreateInvoiceComponent },
+  { path: 'detail', component: InvoiceDetailComponent },
   { path: '**', redirectTo: '/home' }
 ];
 
