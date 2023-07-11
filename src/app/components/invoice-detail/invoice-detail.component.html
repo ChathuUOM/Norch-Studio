@@ -1,9 +1,9 @@
-<div class="p-6">
+<div class="p-6 pb-10">
     <!-- Header Section -->
     <div>
         <div class="sm:flex">
             <h1 class="text-3xl font-bold text-black">Invoice&nbsp;</h1>
-            <h1 class="text-3xl font-bold text-primary">#{{invoice_id}}</h1>
+            <h1 class="mt-4 sm:mt-0 text-3xl font-bold text-primary">#{{invoice_id}}</h1>
         </div>
         <h4 class="text-xl text-gray-light py-5">{{company_name}}</h4>
         <hr class="border-b-1 border-gray-light-1 dark:bg-gray-700">
@@ -11,25 +11,26 @@
 
     <!-- Bill Details Section  -->
     <div class="grid grid-cols-1 sm:grid-cols-2 py-5">
-        <div>
+        <div class="mb-7 sm:mb-0">
             <div>
-                <div>Bill From:</div>
+                <div class="text-base">Bill From:</div>
                 <div class="py-1 text-xl">{{from_owner}}</div>
-                <div class="text-gray-dark">{{from_address}}</div>
+                <div class="text-base text-gray-dark">{{from_address}}</div>
             </div>
             <div class="py-6">
-                <div>Issued On:</div>
+                <div class="text-base">Issued On:</div>
                 <div class="py-1 text-xl">{{issued_date}}</div>
             </div>
+            <hr class="border-b-1 border-gray-light-1 dark:bg-gray-700 sm:hidden">
         </div>
         <div>
             <div>
-                <div>Bill To:</div>
+                <div class="text-base">Bill To:</div>
                 <div class="py-1 text-xl">{{to_owner}}</div>
-                <div class="text-gray-dark">{{to_address}}</div>
+                <div class="text-base text-gray-dark">{{to_address}}</div>
             </div>
             <div class="py-6">
-                <div>Due On:</div>
+                <div class="text-base">Due On:</div>
                 <div class="py-1 text-xl">{{due_date}}</div>
             </div>
         </div>
@@ -47,43 +48,78 @@
                             <thead class="bg-gray-100 dark:bg-gray-700">
                                 <tr>
                                     <th scope="col"
-                                        class="py-3 pr-6 text-base font-medium tracking-wider text-left text-gray-light uppercase dark:text-gray-400">
+                                        class="py-3 pr-6 text-base font-medium tracking-wider text-left text-gray-light capitalize dark:text-gray-400">
                                         Description
                                     </th>
                                     <th scope="col"
-                                        class="py-3 px-6 text-base font-medium tracking-wider text-left text-gray-light uppercase dark:text-gray-400">
+                                        class="py-3 px-6 text-base font-medium tracking-wider text-right text-gray-light capitalize dark:text-gray-400">
                                         Price
                                     </th>
                                     <th scope="col"
-                                        class="py-3 px-6 text-base font-medium tracking-wider text-left text-gray-light uppercase dark:text-gray-400">
+                                        class="py-3 px-6 text-base font-medium tracking-wider text-right text-gray-light capitalize dark:text-gray-400">
                                         Qty
                                     </th>
                                     <th scope="col"
-                                        class="py-3 px-6 text-base font-medium tracking-wider text-left text-gray-light uppercase dark:text-gray-400">
+                                        class="py-3 px-6 text-base font-medium tracking-wider text-right text-gray-light capitalize dark:text-gray-400">
                                         Total Amount
                                     </th>
                                 </tr>
                             </thead>
-                            <tbody class="bg-white divide-y divide-gray-200 dark:bg-gray-800 dark:divide-gray-700">
-                                <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+                            <tbody class="bg-white dark:bg-gray-800">
+                                <tr class="hover:bg-gray-100 dark:hover:bg-gray-700" *ngFor="let item of invoice_list">
                                     <td
                                         class="py-4 pr-6 text-base font-medium text-black whitespace-nowrap dark:text-white">
-                                        Apple Imac 27"</td>
-                                    <td
-                                        class="py-4 px-6 text-base font-medium text-black whitespace-nowrap dark:text-white">
-                                        Desktop PC</td>
-                                    <td
-                                        class="py-4 px-6 text-base font-medium text-black whitespace-nowrap dark:text-white">
-                                        $1999</td>
-                                    <td class="py-4 px-6 text-base font-medium text-black whitespace-nowrap">
-                                        <a href="#" class="text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                                        {{item.description}}
                                     </td>
+                                    <td
+                                        class="py-4 px-6 text-base font-medium text-black text-right whitespace-nowrap dark:text-white">
+                                        ${{item.price}}
+                                    </td>
+                                    <td
+                                        class="py-4 px-6 text-base font-medium text-black text-right whitespace-nowrap dark:text-white">
+                                        {{item.qty}}
+                                    </td>
+                                    <td
+                                        class="py-4 px-6 text-base font-medium text-black text-right whitespace-nowrap dark:text-white">
+                                        ${{item.total_amount}}
+                                    </td>
+                                </tr>
+                                <!-- For Grand Total  -->
+                                <tr>
+                                    <td class="py-4 pr-6 text-base font-bold text-black whitespace-nowrap border-t border-b border-solid border-gray-light-1 dark:text-white"
+                                        colspan="3">Grand Total</td>
+                                    <td
+                                        class="py-4 pr-6 text-base font-bold text-black whitespace-nowrap border-t border-b border-solid border-gray-light-1 text-right  dark:text-white">
+                                        ${{grand_total}}</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <!-- Warning Alert -->
+    <div class="h-auto rounded-lg px-5 py-5 my-7 flex items-center justify-center sm:justify-start border border-solid border-warning bg-warning bg-opacity-10">
+        <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="h-20 sm:h-7 pr-4 text-warning">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z"></path>
+          </svg>
+        <span class="text-base text-gray-dark">Client will get notify to make payment with any credit card, debit card or bank transfer</span>
+    </div>
+
+    <!-- Buttons  -->
+    <div class="py-3 grid sm:block">
+        <div class="grid sm:float-left sm:flex">
+            <button
+                class="py-3 sm:py-2 px-3 my-2 sm:px-6 sm:mr-4 text-base text-gray-dark border border-gray-light rounded-xl hover:text-black hover:bg-gray-light-1 hover:bg-opacity-50">Cancel</button>
+        </div>
+        <div class="grid sm:float-right sm:flex">
+            <button
+                class="py-3 sm:py-2 px-3 my-2 sm:px-6 sm:mr-4 sm:mb-8 text-base text-gray-dark border border-gray-light rounded-xl hover:text-black hover:bg-gray-light-1 hover:bg-opacity-50">Save
+                as Draft</button>
+            <button
+                class="py-3 sm:py-2 px-3 my-2 sm:px-6 sm:mb-8 text-base text-white bg-primary rounded-xl min-w-[100] hover:bg-primary-dark">Send</button>
         </div>
     </div>
 

@@ -18,6 +18,7 @@ export class InvoiceDetailComponent implements OnInit {
   due_date: string = '';
 
   invoice_list: IInvoice[] = [];
+  grand_total: number = 0;
 
   constructor() {}
 
@@ -32,5 +33,20 @@ export class InvoiceDetailComponent implements OnInit {
     this.to_owner = 'Ghyan Gundono';
     this.to_address = '1901 Thornridge Cir.Shiloh, Hawaii 81063';
     this.due_date = '16 March, 2023';
+
+    this.invoice_list = [
+      {description:"Insurance Landing Page",price: 1000, qty: 2, total_amount: 0},
+      {description:"Insurance Illustration",price: 500, qty: 1, total_amount: 0}
+    ]
+
+    this.calculateTotal();
+  }
+
+  calculateTotal(): void {
+    this.grand_total = 0;
+    for (const item of this.invoice_list) {
+      item.total_amount = item.price * item.qty;
+      this.grand_total += item.total_amount;
+    }
   }
 }
