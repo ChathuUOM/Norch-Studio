@@ -4,6 +4,7 @@ import { CurrencyPipe } from '@angular/common';
 import { ICurrency } from 'src/app/model/currency.model';
 import { IInvoiceFormData } from 'src/app/model/invoice-form-data.model';
 import { IInvoice } from 'src/app/model/invoice.model';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-create-invoice',
   templateUrl: './create-invoice.component.html',
@@ -18,12 +19,11 @@ export class CreateInvoiceComponent implements OnInit {
   new_inv!: IInvoice;
   grand_total: number = 0;
 
-  constructor(private currencyPipe: CurrencyPipe) {
+  constructor(private currencyPipe: CurrencyPipe, private router: Router) {
     this.invoiceData = {} as IInvoiceFormData;
   }
 
   ngOnInit(): void {
-
     this.invoice_id = 'NR 00101/08/2023';
     this.currencyList = [
       { value: 1, label: 'NOK' },
@@ -83,6 +83,7 @@ export class CreateInvoiceComponent implements OnInit {
     console.log(this.invoiceForm.value);
   }
 
+  // Format price for total amount calculation
   getFormattedPrice(item?: IInvoice) {
     this.invoice_list.forEach((obj) => {
       if (item) {
@@ -97,11 +98,6 @@ export class CreateInvoiceComponent implements OnInit {
           this.currencyPipe.transform(obj.price, 'USD', 'symbol') || '';
       }
     });
-  }
-
-  // On table data update
-  onCellValueChange(): void {
-    this.calculateTotal();
   }
 
   // Calculate total amount of the invoice table
@@ -121,6 +117,11 @@ export class CreateInvoiceComponent implements OnInit {
     }
   }
 
+  // On table data update
+  onCellValueChange(): void {
+    this.calculateTotal();
+  }
+
   // Add a new row
   addRow(): void {
     this.new_inv = {
@@ -132,5 +133,10 @@ export class CreateInvoiceComponent implements OnInit {
     };
     this.invoice_list.push(this.new_inv);
     console.log('invoice_list', this.invoice_list);
+  }
+
+  // Adding navigation for detail page
+  navigateTo(route: string): void {
+    window.open(route, '_blank');
   }
 }

@@ -48,7 +48,8 @@
                         class="appearance-none block w-full bg-gray-light-2 rounded-xl py-3 px-4 mb-1 focus:outline-none dark:bg-gray-700 dark:placeholder-gray-light"
                         [ngClass]="{ 'border border-solid border-red bg-red bg-opacity-5 dark:border-red-light': (f.bill_from.touched && f.bill_from.invalid) }"
                         minlength="3" tabindex="1" required>
-                    <div *ngIf="f.bill_from.touched && f.bill_from.invalid" class="text-red dark:text-red-light text-sm">
+                    <div *ngIf="f.bill_from.touched && f.bill_from.invalid"
+                        class="text-red dark:text-red-light text-sm">
                         <ng-container *ngIf="f.bill_from.errors && f.bill_from.errors.required">
                             This field is required.
                         </ng-container>
@@ -159,8 +160,10 @@
             <!-- Checkbox Field  -->
             <div class="flex items-center">
                 <input type="checkbox" id="invCheckbox"
-                    class="mr-2 h-5 w-5 text-primary border-gray-dark rounded focus:outline-none dark:bg-gray-700" tabindex="7">
-                <label for="myCheckbox" class="text-gray-700 dark:text-white">This is a recurring invoice (Monthly)</label>
+                    class="mr-2 h-5 w-5 text-primary border-gray-dark rounded focus:outline-none dark:bg-gray-700"
+                    tabindex="7">
+                <label for="myCheckbox" class="text-gray-700 dark:text-white">This is a recurring invoice
+                    (Monthly)</label>
             </div>
 
             <!-- Invoice Item  -->
@@ -214,8 +217,7 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr class="h-6"
-                                                *ngIf="invoice_list.length == 0">
+                                            <tr class="h-6" *ngIf="invoice_list.length == 0">
                                                 <td
                                                     class="h-6 py-3 px-6 mb-1 text-base font-normal text-gray-light whitespace-nowrap bg-gray-light-2 rounded-xl focus:outline-none dark:bg-gray-700">
                                                     Item Name
@@ -243,8 +245,7 @@
                                                     </svg>
                                                 </td>
                                             </tr>
-                                            <tr class="h-6"
-                                                *ngFor="let item of invoice_list">
+                                            <tr class="h-6" *ngFor="let item of invoice_list">
                                                 <td contenteditable='true'
                                                     class="h-6 py-3 px-6 mb-1 text-base font-medium whitespace-nowrap bg-gray-light-2 rounded-xl focus:outline-none dark:bg-gray-700 dark:text-white">
                                                     {{item.description}}
@@ -266,7 +267,8 @@
                                                     class="max-w-50 h-6 py-2 px-6 text-base font-medium hover:text-black-dark float-right whitespace-nowrap dark:text-white">
                                                     <svg fill="none" stroke="currentColor" stroke-width="1.5"
                                                         viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
-                                                        aria-hidden="true" class="h-8 pr-2 cursor-pointer dark:hover:text-gray-light">
+                                                        aria-hidden="true"
+                                                        class="h-8 pr-2 cursor-pointer dark:hover:text-gray-light">
                                                         <path stroke-linecap="round" stroke-linejoin="round"
                                                             d="M6.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM12.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM18.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0z">
                                                         </path>
@@ -318,13 +320,14 @@
             <!-- Button  -->
             <div class="block w-full">
                 <div class="flex float-right">
-                    <button
-                        class="py-3 sm:py-2 px-3 my-1 sm:px-6 sm:mb-8 text-base text-white bg-primary rounded-xl min-w-[100] hover:bg-primary-dark">Create
-                        Invoice</button>
+                    <a href="/detail" (click)="navigateTo('/detail')" routerLink="/detail" target="_blank">
+                        <button
+                            class="py-3 sm:py-2 px-3 my-1 sm:px-6 sm:mb-8 text-base text-white bg-primary rounded-xl min-w-[100] hover:bg-primary-dark">
+                            Create Invoice
+                        </button>
+                    </a>
                 </div>
             </div>
-
-
         </form>
     </div>
 </div>
