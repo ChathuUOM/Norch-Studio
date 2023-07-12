@@ -6,7 +6,10 @@ module.exports = {
     colors: {
       'primary': "#1651e8",
       "primary-dark": "#1342b9",
+      "primary-thm-dark": "#6969ff",
+      
       'white': "#fefefe",
+
       'black': "#1b1b1b",
       "black-dark": "#000000",
       'black-thm-drk':'#252525',
@@ -17,10 +20,11 @@ module.exports = {
       "gray-dark": "#5e5e5e",
       "gray-700": "#383838",
 
-      warning: "#f6c274",
-
-      red: "#fa1616",
+      'red': "#fa1616",
       "red-light": "#e56565",
+
+      'warning': "#f6c274",
+
     },
     extend: {
       /* Reset margins, paddings, and borders for all elements */
