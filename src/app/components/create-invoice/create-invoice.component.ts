@@ -23,6 +23,7 @@ export class CreateInvoiceComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
     this.invoice_id = 'NR 00101/08/2023';
     this.currencyList = [
       { value: 1, label: 'NOK' },
@@ -36,28 +37,28 @@ export class CreateInvoiceComponent implements OnInit {
     this.invoice_list = [
       {
         id: 1,
-        description: 'Insurance Landing Page',
+        description: 'First Page',
         price: 200,
         qty: 2,
         total_amount: 0,
       },
       {
         id: 2,
-        description: 'Insurance Landing Page',
+        description: 'Second Page',
         price: 800,
         qty: 5,
         total_amount: 0,
       },
       {
         id: 3,
-        description: 'Insurance Landing Page',
+        description: 'Third Page',
         price: 500,
         qty: 2,
         total_amount: 0,
       },
     ];
     this.calculateTotal();
-    this.getFormattedPrice();
+    // this.getFormattedPrice();
   }
 
   invoiceForm = new FormGroup({
