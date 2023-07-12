@@ -35,8 +35,8 @@ export class InvoiceDetailComponent implements OnInit {
     this.due_date = '16 March, 2023';
 
     this.invoice_list = [
-      {description:"Insurance Landing Page",price: 1000, qty: 2, total_amount: 0},
-      {description:"Insurance Illustration",price: 500, qty: 1, total_amount: 0}
+      {id:1, description:"Insurance Landing Page",price: 1000, qty: 2, total_amount: 0},
+      {id:2, description:"Insurance Illustration",price: 500, qty: 1, total_amount: 0}
     ]
 
     this.calculateTotal();

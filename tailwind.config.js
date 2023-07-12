@@ -8,12 +8,15 @@ module.exports = {
       'primary-dark': '#1342b9',
       'white': '#fefefe',
       'black': '#1b1b1b',
+      'black-dark': '#000000',
       
       'gray-light': '#8c8e8f',
       'gray-light-1': '#e8e6e7',
       'gray-light-2': '#f1f2f8',
       'gray-dark': '#5e5e5e',
       'warning': '#f6c274',
+
+      'red':'#fa1616',
     },
     extend: {
       /* Reset margins, paddings, and borders for all elements */

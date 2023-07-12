@@ -1,6 +1,7 @@
 export interface IInvoice {
+  id: number;
   description: string;
-  price: number;
+  price: any;
   qty: number;
   total_amount: number;
 }
