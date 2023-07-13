@@ -2,6 +2,14 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.7.
 
+    * Theme Switching: 
+    The option to switch between dark and light themes is available by clicking on the checkbox located at the top right corner of the page.
+
+    * Navigating To Invoice Detail Page:
+    By clicking on "Create Invoice" button at the bottom right corner of the page.
+
+    * Viewing table UI without Records in "Create New Invoice" Page:
+    Open the "create-invoice.component.ts" file and comment out lines 38-58.
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
