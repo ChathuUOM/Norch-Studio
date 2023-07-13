@@ -1,4 +1,4 @@
-<div class="p-6 pb-10">
+<div class="p-10 pt-6">
     <!-- Header Section -->
     <div>
         <div class="sm:flex">
@@ -48,19 +48,19 @@
                             <thead>
                                 <tr>
                                     <th scope="col"
-                                        class="py-3 pr-6 text-base font-medium tracking-wider text-left text-gray-light capitalize dark:text-gray-400">
+                                        class="t1-head text-left">
                                         Description
                                     </th>
                                     <th scope="col"
-                                        class="py-3 px-6 text-base font-medium tracking-wider text-right text-gray-light capitalize dark:text-gray-400">
+                                        class="t1-head text-right">
                                         Price
                                     </th>
                                     <th scope="col"
-                                        class="py-3 px-6 text-base font-medium tracking-wider text-right text-gray-light capitalize dark:text-gray-400">
+                                        class="t1-head text-right">
                                         Qty
                                     </th>
                                     <th scope="col"
-                                        class="py-3 px-6 text-base font-medium tracking-wider text-right text-gray-light capitalize dark:text-gray-400">
+                                        class="t1-head text-right">
                                         Total Amount
                                     </th>
                                 </tr>
@@ -68,19 +68,19 @@
                             <tbody>
                                 <tr class="hover:bg-gray-light-1 dark:hover:bg-gray-700" *ngFor="let item of invoice_list">
                                     <td
-                                        class="py-4 pr-6 text-base font-medium whitespace-nowrap dark:text-white">
+                                        class="t1-data text-left">
                                         {{item.description}}
                                     </td>
                                     <td
-                                        class="py-4 px-6 text-base font-medium text-right whitespace-nowrap dark:text-white">
+                                        class="t1-data text-right">
                                         ${{item.price}}
                                     </td>
                                     <td
-                                        class="py-4 px-6 text-base font-medium text-right whitespace-nowrap dark:text-white">
+                                        class="t1-data text-right">
                                         {{item.qty}}
                                     </td>
                                     <td
-                                        class="py-4 px-6 text-base font-medium text-right whitespace-nowrap dark:text-white">
+                                        class="t1-data text-right">
                                         ${{item.total_amount}}
                                     </td>
                                 </tr>

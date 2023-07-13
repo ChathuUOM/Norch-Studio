@@ -1,5 +1,5 @@
 <!-- Header Section -->
-<div class="p-6 pb-0 sm:pb-10">
+<div class="p-6 sm:px-10 pt-6 pb-0 sm:pb-10">
     <div>
         <h4 class="text-xl font-bold">Create New Invoice</h4>
         <div class="block my-6">
@@ -33,7 +33,7 @@
 </div>
 
 <!-- Form Details  -->
-<div class="p-6 pt-4 pb-10 sm:block">
+<div class="p-6 sm:px-10 pt-4 pb-10">
     <h4 class="text-xl font-bold">Details</h4>
     <div class="mx-auto my-5">
         <form class="w-full text-base" [formGroup]="invoiceForm" (ngSubmit)="submit()" novalidate>
@@ -126,7 +126,7 @@
                     </label>
                     <div class="relative">
                         <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                            <svg class="w-4 h-4 text-gray-light dark:text-gray-400" aria-hidden="true"
+                            <svg class="w-4 h-4 text-gray-light" aria-hidden="true"
                                 xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                                 <path
                                     d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
@@ -144,7 +144,7 @@
                     </label>
                     <div class="relative">
                         <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                            <svg class="w-4 h-4 text-gray-light dark:text-gray-400" aria-hidden="true"
+                            <svg class="w-4 h-4 text-gray-light" aria-hidden="true"
                                 xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                                 <path
                                     d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
@@ -187,7 +187,7 @@
 
                 <!-- Table Section  -->
                 <div>
-                    <div class="flex flex-col">
+                    <div class="flex flex-col sm:-mx-3">
                         <div class="overflow-x-auto">
                             <div class="inline-block min-w-full align-middle">
                                 <div class="overflow-hidden ">
@@ -196,42 +196,42 @@
                                         <thead>
                                             <tr>
                                                 <th scope="col"
-                                                    class="pr-6 font-normal text-base text-left text-dark capitalize dark:text-gray-400">
+                                                    class="t2-head text-left">
                                                     Item
                                                 </th>
                                                 <th scope="col"
-                                                    class="pr-6 font-normal text-base text-right text-dark capitalize dark:text-gray-400">
+                                                    class="t2-head text-right">
                                                     Price
                                                 </th>
                                                 <th scope="col"
-                                                    class="pr-6 font-normal text-base text-right text-dark capitalize dark:text-gray-400">
+                                                    class="t2-head text-right">
                                                     Qty
                                                 </th>
                                                 <th scope="col"
-                                                    class="pr-6 font-normal text-base text-right text-dark capitalize dark:text-gray-400">
+                                                    class="t2-head text-right">
                                                     Total Price
                                                 </th>
                                                 <th scope="col"
-                                                    class="max-w-50 pr-6 text-base font-medium text-left text-gray-light capitalize dark:text-gray-400">
+                                                    class="max-w-50 pr-6 text-base font-medium text-left text-gray-light capitalize">
                                                 </th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr class="h-6" *ngIf="invoice_list.length == 0">
                                                 <td
-                                                    class="h-6 py-3 px-6 mb-1 text-base font-normal text-gray-light whitespace-nowrap bg-gray-light-2 rounded-xl focus:outline-none dark:bg-gray-700">
+                                                    class="t2-data text-gray-light text-left">
                                                     Item Name
                                                 </td>
                                                 <td
-                                                    class="h-6 py-3 px-6 mb-1 text-base font-normal text-gray-light text-right whitespace-nowrap bg-gray-light-2 rounded-xl focus:outline-none dark:bg-gray-700">
+                                                    class="t2-data text-gray-light text-right">
                                                     $500.00
                                                 </td>
                                                 <td
-                                                    class="h-6 py-3 px-6 mb-1 text-base font-normal text-gray-light text-right whitespace-nowrap bg-gray-light-2 rounded-xl focus:outline-none dark:bg-gray-700">
+                                                    class="t2-data text-gray-light text-right">
                                                     2
                                                 </td>
                                                 <td
-                                                    class="h-6 py-3 px-6 mb-1 text-base font-normal text-gray-light text-right whitespace-nowrap bg-gray-light-2 rounded-xl focus:outline-none  dark:bg-gray-700">
+                                                    class="t2-data text-gray-light text-right">
                                                     $1000.00
                                                 </td>
                                                 <td
@@ -247,19 +247,19 @@
                                             </tr>
                                             <tr class="h-6" *ngFor="let item of invoice_list">
                                                 <td contenteditable='true'
-                                                    class="h-6 py-3 px-6 mb-1 text-base font-medium whitespace-nowrap bg-gray-light-2 rounded-xl focus:outline-none dark:bg-gray-700 dark:text-white">
+                                                    class="t2-data font-medium text-left dark:text-white">
                                                     {{item.description}}
                                                 </td>
                                                 <td contenteditable='true'
-                                                    class="h-6 py-3 px-6 mb-1 text-base font-medium text-right whitespace-nowrap bg-gray-light-2 rounded-xl focus:outline-none dark:bg-gray-700 dark:text-white">
+                                                    class="t2-data font-medium text-right dark:text-white">
                                                     {{item.price | currency}}
                                                 </td>
                                                 <td contenteditable='true'
-                                                    class="h-6 py-3 px-6 mb-1 text-base font-medium text-center whitespace-nowrap bg-gray-light-2 rounded-xl focus:outline-none dark:bg-gray-700 dark:text-white">
+                                                    class="t2-data font-medium text-center dark:text-white">
                                                     {{item.qty}}
                                                 </td>
                                                 <td
-                                                    class="h-6 py-3 px-6 mb-1 text-base font-medium text-right whitespace-nowrap bg-gray-light-2 rounded-xl focus:outline-none dark:bg-gray-700 dark:text-white">
+                                                    class="t2-data font-medium text-right dark:text-white">
                                                     {{item.total_amount | currency}}
                                                 </td>
 
@@ -319,7 +319,7 @@
 
             <!-- Button  -->
             <div class="block w-full">
-                <div class="flex float-right">
+                <div class="flex float-right mb-6">
                     <a href="/detail" (click)="navigateTo('/detail')" routerLink="/detail" target="_blank">
                         <button
                             class="py-3 sm:py-2 px-3 my-1 sm:px-6 sm:mb-8 text-base text-white bg-primary rounded-xl min-w-[100] hover:bg-primary-dark">
