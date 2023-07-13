@@ -65,7 +65,7 @@
                     </label>
                     <input type="text" id="bill_to" formControlName="bill_to" placeholder="Ghyan Gundono"
                         class="appearance-none block w-full bg-gray-light-2 rounded-xl py-3 px-4 mb-1 focus:outline-none dark:bg-gray-700 dark:placeholder-gray-light"
-                        [ngClass]="{ 'border border-solid border-red bg-red bg-opacity-5': (f.bill_to.touched && f.bill_to.invalid) }"
+                        [ngClass]="{ 'border border-solid border-red bg-red bg-opacity-5 dark:border-red-light': (f.bill_to.touched && f.bill_to.invalid) }"
                         minlength="3" tabindex="2" required>
                     <div *ngIf="f.bill_to.touched && f.bill_to.invalid" class="text-red dark:text-red-light text-sm">
                         <ng-container *ngIf="f.bill_to.errors && f.bill_to.errors.required">
@@ -246,7 +246,7 @@
                                                 </td>
                                             </tr>
                                             <tr class="h-6" *ngFor="let item of invoice_list">
-                                                <td contenteditable='true'
+                                                <td contenteditable='false'
                                                     class="t2-data font-medium text-left dark:text-white">
                                                     <input type="text" class="w-full appearance-none bg-gray-light-2 truncate focus:outline-none dark:bg-gray-700" [(ngModel)]="item.description" [ngModelOptions]="{standalone: true}" >
                                                 </td>
